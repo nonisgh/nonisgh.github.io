@@ -1,0 +1,13 @@
+{
+  "name": "次元おりがみ・高次元ビジュアルコレクション",
+  "short_name": "高次元ビジュアル",
+  "start_url": "/math-visualizations/",
+  "display": "standalone",
+  "background_color": "#070b1f",
+  "theme_color": "#070b1f",
+  "icons": [
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
