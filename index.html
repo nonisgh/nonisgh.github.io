@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>nonisgh — 高次元ビジュアルコレクション</title>
-<meta name="description" content="4次元・5次元を目で見る数学のアプリ集（次元おりがみ・超球・球面さんぽ・グラフ電卓 など）">
+<title>nonisgh のアプリ</title>
+<meta name="description" content="nonisgh が作ったアプリの入口。高次元ビジュアルコレクション・おかいものメモ・カード明細集計・送付状メーカー・パスワード生成。">
 <!-- このドメイン（nonisgh.github.io）の入口のアイコン。1Password・ブラウザのブックマークなどは、ドメインのここからアイコンを拾う -->
 <link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48">
 <link rel="icon" type="image/svg+xml" href="icon.svg">
@@ -14,21 +14,75 @@
 <meta name="theme-color" content="#070b1f">
 <style>
     :root { color-scheme: dark; }
-    body { margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at 50% 35%, #151b45, #050816 70%); color: #e2e8f0; font-family: system-ui, -apple-system, "Hiragino Sans", sans-serif; }
-    main { text-align: center; padding: 32px 16px; max-width: 520px; }
-    img { width: 112px; height: 112px; border-radius: 24px; box-shadow: 0 12px 44px rgba(0, 0, 0, 0.6); }
-    h1 { font-size: 22px; margin: 22px 0 8px; }
-    p { color: #94a3b8; font-size: 14px; line-height: 1.7; margin: 0 0 22px; }
-    a.go { display: inline-block; padding: 10px 20px; border-radius: 12px; background: #4c1d95; color: #f5f3ff; text-decoration: none; border: 1px solid #a78bfa; }
-    a.go:hover { background: #5b21b6; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; background: radial-gradient(circle at 50% 0%, #151b45, #050816 70%) fixed; color: #e2e8f0;
+           font-family: system-ui, -apple-system, "Hiragino Sans", sans-serif; padding: 0 16px 48px; }
+    main { max-width: 760px; margin: 0 auto; }
+    header { text-align: center; padding: 40px 0 24px; }
+    header img { width: 72px; height: 72px; border-radius: 18px; box-shadow: 0 10px 36px rgba(0, 0, 0, 0.6); }
+    h1 { font-size: 22px; margin: 16px 0 6px; }
+    header p { color: #94a3b8; font-size: 14px; margin: 0; }
+    h2 { font-size: 13px; color: #94a3b8; font-weight: 600; letter-spacing: .08em; margin: 28px 0 10px; }
+    .list { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+    a.app { display: flex; flex-direction: column; gap: 6px; padding: 16px; border-radius: 14px; text-decoration: none; color: inherit;
+            background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.10); transition: background .15s, border-color .15s, transform .15s; }
+    a.app:hover { background: rgba(167, 139, 250, 0.12); border-color: #a78bfa; transform: translateY(-2px); }
+    .top { display: flex; align-items: center; gap: 10px; }
+    .emoji { font-size: 26px; line-height: 1; }
+    .name { font-weight: 700; font-size: 16px; }
+    .desc { color: #94a3b8; font-size: 13px; line-height: 1.6; }
+    .meta { margin-top: auto; padding-top: 4px; font-size: 11px; color: #64748b; display: flex; gap: 8px; flex-wrap: wrap; }
+    .tag { border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 999px; padding: 1px 8px; }
+    footer { text-align: center; margin-top: 36px; font-size: 12px; color: #64748b; }
+    footer a { color: #a78bfa; }
 </style>
 </head>
 <body>
 <main>
-    <img src="icon.svg" alt="">
-    <h1>高次元ビジュアルコレクション</h1>
-    <p>4次元・5次元を目で見る数学のアプリ集です。<br>次元おりがみ・超球・球面さんぽ・グラフ電卓 など。</p>
-    <a class="go" href="/math-visualizations/">アプリの一覧へ</a>
+    <header>
+        <img src="icon.svg" alt="">
+        <h1>nonisgh のアプリ</h1>
+        <p>つくったものの入口です。</p>
+    </header>
+
+    <h2>まなぶ・あそぶ</h2>
+    <div class="list">
+        <a class="app" href="/math-visualizations/">
+            <div class="top"><span class="emoji">🌌</span><span class="name">高次元ビジュアルコレクション</span></div>
+            <div class="desc">4次元・5次元を目で見る数学のアプリ集。次元おりがみ・超球・球面さんぽ・グラフ電卓 など、約20こ。</div>
+            <div class="meta"><span class="tag">数学</span><span class="tag">一覧ページあり</span></div>
+        </a>
+    </div>
+
+    <h2>くらし</h2>
+    <div class="list">
+        <a class="app" href="/kaimono/">
+            <div class="top"><span class="emoji">🛒</span><span class="name">おかいものメモ（β版）</span></div>
+            <div class="desc">買うものリストを売り場ごとに。二人で共有できて、売り場マップつき。iPhoneアプリ版もあり。</div>
+            <div class="meta"><span class="tag">買い物</span><span class="tag">共有</span></div>
+        </a>
+        <a class="app" href="/card-summary/">
+            <div class="top"><span class="emoji">💳</span><span class="name">カード明細集計</span></div>
+            <div class="desc">三井住友カード・マネーフォワードのCSVをドロップして、自分の種別マスタで集計。月ごとの推移も。</div>
+            <div class="meta"><span class="tag">家計</span><span class="tag">ログイン</span></div>
+        </a>
+    </div>
+
+    <h2>しごと・べんり</h2>
+    <div class="list">
+        <a class="app" href="/soufujo-maker/">
+            <div class="top"><span class="emoji">✉️</span><span class="name">送付状メーカー</span></div>
+            <div class="desc">AIが書いた文章を貼るだけで、送付状をきれいに印刷。</div>
+            <div class="meta"><span class="tag">印刷</span></div>
+        </a>
+        <a class="app" href="/password/">
+            <div class="top"><span class="emoji">🔑</span><span class="name">パスワードジェネレーター</span></div>
+            <div class="desc">つよいパスワードをまとめてつくって、すぐコピー。</div>
+            <div class="meta"><span class="tag">セキュリティ</span></div>
+        </a>
+    </div>
+
+    <footer>ソースは <a href="https://github.com/nonisgh">github.com/nonisgh</a></footer>
 </main>
 </body>
 </html>
